@@ -13,12 +13,13 @@ for fasta_path in fasta_paths:
 		print(out_path, "already exists. skipping.")
 	else:
 		print(out_path, "solving...")
-		call_str = ['./rust_overlaps.exe',
+		call_str = ['./rust_overlaps_measure.exe',
 					in_dir+fasta_path,
 					out_path,
 					str(e),
 					str(t),
-					'-r', '-t']
+					'-r', '-t'
+					]
 		print('CALLING', ' '.join(call_str))
 		subprocess.call(call_str)
 		print(out_path, "...solved!")
